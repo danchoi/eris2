@@ -1,0 +1,124 @@
+.container {
+  margin-bottom: 50px;
+}
+.fb-container {
+  width: 520px;
+}
+.fb-container .firstCol {
+  margin-right: 0;
+  width: 240px;
+}
+.fb-container .lastCol {
+  margin-right: 0;
+  width: 260px;
+  margin-left: 20px;
+}
+#contentBox {
+  height: 8800px;
+  overflow:hidden;
+}
+#footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dotted #DDD;
+  text-align: center;
+}
+.titleheader {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.twitter-users img { 
+  width: 30px; float:left; margin-right: 10px; 
+  margin-top:4px;
+}
+.date {
+  float: right;
+  font-size: smaller;
+  color: #CCC;
+}
+
+.leftBar ul {
+  list-style-type: none;
+  margin-left:0;
+}
+.feedItems li {
+  margin-top: 0.5em;
+}
+.feedItem { 
+  clear: both;
+  border-top: 1px dotted #ECECEC;
+  padding-bottom: 0.3em;
+  padding-top: 0.5em;
+  min-height: 144px;
+}
+.tweet { 
+  clear: left;
+  border-top: 1px dotted #ECECEC;
+  font-size: smaller;
+}
+  .tweet p { 
+    margin-bottom: 5px;
+  }
+  .tweet img {
+    padding-top:5px;
+    margin-right: 10px;
+    width: 30px;
+  }
+.twitter-users li {
+  clear:left; 
+}
+.leftBar h3 { clear:left }
+#toplinks {
+  margin-top: 1em;
+  text-align:right;
+  float:right;
+}
+.location {
+  color: #CCC;
+  font-size: smaller;
+}
+.tweet_date {
+  color: #CCC;
+  font-size: smaller;
+  float: right;
+}
+  .tweet_date a {
+    color: #CCC;
+  }
+.tweet img {
+  float: left;
+  padding-top:5px;
+}
+.feedItem img {
+  float: right;
+  max-width: 150px;
+  margin-left: 4px;
+  margin-top: 4px;
+}
+
+.homeNav { font-size: 24px; }
+.homeNav ul { 
+margin-left: 0;
+}
+.homeNav li { 
+  display:inline;
+  line-height: 1.5em; 
+  margin-right: 20px;
+}
+
+img.podcast-image {
+  height: 75px;
+  width: 75px;
+}
+.playingAudio {
+  background-color: #FFFFE0;
+}
+
+.homeNav.kindle img {
+  height: 500px;
+  display: inline;
+}
+
+#fbLikeContainer {
+  height: 30px;
+}

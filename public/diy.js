@@ -1,0 +1,89 @@
+
+$(function() {
+  _.templateSettings = { interpolate : /\{\{(.+?)\}\}/g };
+
+  var hasAudioSupport = !!document.createElement('audio').canPlayType;
+
+  window.FeedItem = Backbone.Model.extend({ idAttribute: 'href' });
+  window.FeedItemsList = Backbone.Collection.extend({
+    url: function() { return nil; },
+    model: FeedItem,
+    comparator: function(x) { return x.get('date'); }
+  });
+  window.FeedItems = new FeedItemsList();
+  window.FeedItemView = Backbone.View.extend({
+    tagName: "div",
+    classNme: "feedItem",
+    template: _.template( $('#feed-item-template').html() ),
+    render: function() {
+      $(this.el).html(this.template(this.model.toJSON()));
+      return this;
+    }
+  });
+
+
+  window.Tweet = Backbone.Model.extend({ });
+  window.TweetsList = Backbone.Collection.extend({
+    url: function() { return ; },
+    model: Tweet,
+    comparator: function(x) { return x.get('created_at'); }
+  });
+
+  window.Tweets = new TweetsList();
+  window.TweetView = Backbone.View.extend({
+    tagName: "div",
+    classNme: "tweet",
+    template: _.template( $('#tweet-template').html() ),
+    render: function() {
+      $(this.el).html(this.template(this.model.toJSON()));
+      return this;
+    }
+  });
+
+  window.AppView = Backbone.View.extend({
+    initialize: function() {
+      FeedItems.bind('add', this.addOneFeedItem, this);
+      FeedItems.bind('reset', this.addAllFeedItems, this);
+      FeedItems.bind('refresh', this.addAllFeedItems, this);
+
+      Tweets.bind('add', this.addOneTweet, this);
+      Tweets.bind('reset', this.addAllTweets, this);
+      Tweets.bind('refresh', this.addAllTweets, this);
+    },
+
+    addOneFeedItem: function(x) {
+      var feedItemView = new FeedItemView({model: x});
+      var countCol1 =  $("#feedItems").children().length;
+      var countCol2 =  $("#feedItems-column-2").children().length;
+      var feedTitle = x.get("feed_title");
+      if (feedTitle == "DIYbio Google Group") {
+        $("#feedItems").prepend(feedItemView.render().el);
+      } else {
+        $("#feedItems-column-2").prepend(feedItemView.render().el);
+      }
+    },
+    addAllFeedItems: function() { 
+      FeedItems.each(this.addOneFeedItem); 
+      $('audio').unbind();
+      $('audio').click(function() {
+        if ($(this).parent().hasClass('playingAudio')) {
+          // do nothing
+        } else {
+          $('audio').parent().removeClass('playingAudio');
+          $('audio').each( function() { this.pause(); });
+          $(this).parent().addClass("playingAudio");
+        }
+      });
+    },
+
+    addOneTweet: function(x) {
+      var tweetView = new TweetView({model: x});
+      $("#tweets").prepend(tweetView.render().el);
+    },
+    addAllTweets: function() { Tweets.each(this.addOneTweet); }
+  });
+
+  window.App = new AppView;
+
+});
+
