@@ -1,3 +1,6 @@
+body {
+  font-family: 'Lato',Helvetica,Arial,sans-serif  ;
+}
 .container {
   margin-bottom: 50px;
 }
@@ -122,3 +125,35 @@ img.podcast-image {
 #fbLikeContainer {
   height: 30px;
 }
+
+/* nav */
+
+
+body {
+font-family: 'Lato',Helvetica,Arial,sans-serif;
+}
+#navigation {
+margin-top:40px;
+float: right;
+width: 400px;
+text-align: right;
+font-size: 14px;
+}
+#navigation li {
+  display: inline;
+}
+#navigation li a {
+  padding: 0.5em;
+  text-transform: lowercase;
+}
+#navigation li a:visited,
+#navigation li a:link {
+  color: #444;
+}
+#navigation li.blue a:visited,
+#navigation li.blue a:link,
+#navigation li a:hover {
+  text-decoration: none;
+  color: #275EA0;
+}
+

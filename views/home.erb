@@ -13,9 +13,24 @@
     <div class="container">
       <!-- TODO configurable header section -->
 
+      <% if page_config['nav'] %>
+
+        <div id="navigation">
+          <ul id="menu-main">
+            <% page_config['nav'].each do |link| %>
+              <li><a href="<%=link['href']%>"><%=link['text']%></a></li>
+            <% end %>
+          </ul>
+        </div>
+
+      <% end %>
 
       <h1 class="titleheader">
-        <%= page_config['title'] %>
+        <% if page_config['logo'] %>
+          <a href="<%=page_config['logo']['href']%>"><img alt="<%=page_config['logo']['alt']%>" src="<%=page_config['logo']['src']%>"/></a>
+        <% else %>
+          <%= page_config['title'] %>
+        <% end %>
       </h1>
 
       <div id="fbLikeContainer">
