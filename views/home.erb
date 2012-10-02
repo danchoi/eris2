@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>diybio</title>
+    <title><%= config['page']['title'] %></title>
     <link href="/bootstrap.min.css" rel="stylesheet"/>
     <link href="/bootstrap-responsive.min.css" rel="stylesheet"/>
     <link href="/app.css" rel="stylesheet"/>
     <!-- TODO configurable per section stylesheet -->
+
   </head>
   <body>
 
@@ -13,14 +14,13 @@
       <!-- TODO configurable header section -->
 
 
-      <div id="toplinks">
-        links here
-      </div>
-
-
       <h1 class="titleheader">
-        diybio
+        <%= config['page']['title'] %>
       </h1>
+
+      <div id="fbLikeContainer">
+        <div class="fb-like" data-send="true" data-width="450" data-show-faces="true"></div>
+      </div>
 
       <p>
         This page should update automatically in-place every few minutes.
@@ -50,7 +50,7 @@
     <script type="text/javascript" src="/underscore-min.js"></script>
     <script type="text/javascript" src="/jquery-1.7.1.js"></script>
     <script type="text/javascript" src="/backbone-min.js"></script>
-    <script type="text/javascript" src="/diy.js"></script>
+    <script type="text/javascript" src="/app.js"></script>
 
     <script>
       $(function() {
@@ -63,7 +63,7 @@
           console.log("last tweet");
           console.log(lastItem.attributes);
           */
-          return ('/110/tweets?from_time=' + lastItem.get("created_at"));
+          return ('/tweets?from_time=' + lastItem.get("created_at"));
         };
         FeedItems.url = function() {
           var lastItem = this.models[this.models.length-1];
@@ -72,14 +72,14 @@
           console.log("last feed item");
           console.log(lastItem.attributes);
           */
-          return ('/110/feed_items?from_time=' + lastItem.get("date"));
+          return ('/feed_items?from_time=' + lastItem.get("date"));
         };
         setInterval(function () {
           Tweets.fetch({add: true});
-        }, 60 * 1000);
+        }, <%= page_config['poll_interval_seconds'] * 1000 %>);
         setInterval(function () {
           FeedItems.fetch({add: true});
-        }, 60 * 1000);
+        }, <%= page_config['poll_interval_seconds'] * 1000 * 2 %>);
       });
     </script>
     <!-- Templates -->
@@ -115,6 +115,14 @@
 
 
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 <script type="text/javascript">

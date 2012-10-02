@@ -5,9 +5,7 @@ require 'pp'
 
 config = YAML::load_file('config.yml')
 DB = Sequel.connect config['database']
-
 twitter_config = config['twitter']
-
 
 Twitter.configure do |c|
   c.consumer_key = twitter_config['consumer_key']
