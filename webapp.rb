@@ -7,8 +7,8 @@ require 'yaml'
 require 'uri'
 require 'open-uri'
 
-config = YAML::load_file('config.yml')
-DB = Sequel.connect config['database']
+CONFIG = YAML::load_file('config.yml')
+DB = Sequel.connect CONFIG['database']
 
 class Array
   def uniq_by
@@ -24,12 +24,12 @@ set :root, File.dirname(__FILE__)
 helpers do
 
   def page_config
-    config['page']
+    CONFIG['page'] 
   end
 
   def set_image(p)
     if p[:image_file]  
-      image_path = "/feed-images/#{p[:item_id]}/#{p[:image_file]}"
+      image_path = "/feed_images/#{p[:item_id]}/#{p[:image_file]}"
       p[:image_tag] = %Q[<a href="#{p[:item_href]}"><img class="feed-item-image" src="#{image_path}"/></a>] 
     elsif p[:podcast_image]
       p[:image_tag] = %Q[<a href="#{p[:item_href]}"><img class="podcast-image" src="#{p[:podcast_image]}"/></a>] 

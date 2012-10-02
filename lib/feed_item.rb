@@ -67,7 +67,7 @@ class FeedItem
       if idx == 0
         DB[:items].filter(item_id:image[:item_id]).update(featured_image_id:image[:image_id])
       end
-      dir = "img/#{@item_id}"
+      dir = "public/feed_images/#{@item_id}"
       path = "#{dir}/#{image[:filename]}"
       unless File.exist?(path)
         run "mkdir -p #{dir}"
