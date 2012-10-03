@@ -1,0 +1,125 @@
+page:
+  title: diybio
+  poll_interval_seconds: 5
+  logo:
+    src: http://diybiology.files.wordpress.com/2011/10/diybio-logo-black-90x60px.png
+    alt: do-it-yourself biology
+    href: http://diybio.org/
+  nav:
+  - href: http://diybio.org/local/
+    text: Local
+  - href: http://diybio.org/projects/
+    text: Projects
+  - href: http://diybio.org/blog/
+    text: Blog
+  - href: http://news.diybio.org
+    text: News
+database:
+  adapter: postgres
+  host: localhost
+  database: eris
+twitter:
+  consumer_key: asldkjalskdj
+  consumer_secret: asldkjaskldj
+  access_token: asdkjaksldj
+  access_token_secret: aslkjdlaskjd
+  lists:
+  - owner: diybio
+    slug: garagistas
+feeds: 
+  - title: Plastic Biology
+    html_url: http://plasticbiology.net/
+    xml_url: http://plasticbiology.net/rss
+  - title: ""
+    html_url: http://hackteria.org
+    xml_url: http://hackteria.org/?feed=rss2
+  - title: Home Biology
+    html_url: http://homebiology.blogspot.com/feeds/posts/default
+    xml_url: http://homebiology.blogspot.com/feeds/posts/default
+  - title: whiteBox
+    html_url: http://www.arduino.si/blog
+    xml_url: http://www.arduino.si/blog/feed/
+  - title: synthesis
+    html_url: http://www.synthesis.cc/
+    xml_url: http://www.synthesis.cc/atom.xml
+  - title: basementbiotech.org
+    html_url: http://basementbiotech.org
+    xml_url: http://basementbiotech.org/?feed=rss2
+  - title: "Tequals0 \xC2\xBB Biology"
+    html_url: http://tequals0.wordpress.com
+    xml_url: http://tequals0.wordpress.com/category/biology/feed/
+  - title: Cheapass Science
+    html_url: http://cheapassscience.wordpress.com
+    xml_url: http://cheapassscience.wordpress.com/feed/
+  - title: Blog
+    html_url: http://www.goodiybio.org/competition/blog
+    xml_url: http://www.goodiybio.org/competition/blog?format=feed&type=rss
+  - title: DIY BIO 4 Beginners
+    html_url: http://diybio4beginners.blogspot.com/feeds/posts/default
+    xml_url: http://diybio4beginners.blogspot.com/feeds/posts/default
+  - title: Amplino
+    html_url: http://www.amplino.org
+    xml_url: http://www.amplino.org/feed/
+  - title: Indie Biotech
+    html_url: http://www.indiebiotech.com
+    xml_url: http://www.indiebiotech.com/?feed=rss2
+  - title: Oscillator
+    html_url: http://blogs.scientificamerican.com/oscillator
+    xml_url: http://rss.sciam.com/oscillator/feed
+  - title: Fresh Photons
+    html_url: http://freshphotons.tumblr.com/
+    xml_url: http://freshphotons.tumblr.com/rss
+  - title: The Personal Genome
+    html_url: http://jrb.typepad.com/personalgenome/
+    xml_url: http://feeds.feedburner.com/thepersonalgenome
+  - title: KeegoTech News
+    html_url: http://news.keegotech.com
+    xml_url: http://news.keegotech.com/feed/
+  - title: DIYBIOFTW
+    html_url: http://diybioftw.com/
+    xml_url: http://diybioftw.com/rss
+  - title: BioCurious. A hackerspace for bio.
+    html_url: http://biocurious.posterous.com
+    xml_url: http://biocurious.posterous.com/rss.xml
+  - title: PersonalPCR
+    html_url: http://personalpcr.tumblr.com/
+    xml_url: http://personalpcr.tumblr.com/rss
+  - title: OpenWetWare  - Changes related to "User talk:Robin Brandt" [en]
+    html_url: http://openwetware.org/wiki/Special:RecentChangesLinked
+    xml_url: http://openwetware.org/index.php?title=Special:RecentChangesLinked&feed=rss&target=DIYbio%2FFAQ
+  - title: Freelancing science
+    html_url: http://freelancingscience.com
+    xml_url: http://freelancingscience.com/feed/
+  - title: BOSSLAB
+    html_url: http://bosslab.org/
+    xml_url: http://bosslab.org/rss
+  - title: Backyard Brains
+    html_url: http://news.backyardbrains.com
+    xml_url: http://news.backyardbrains.com/feed/
+  - title: 88 Proof Synth Bio Blog
+    html_url: http://88proof.com/synthetic_biology/blog
+    xml_url: http://88proof.com/synthetic_biology/blog/feed
+  - title: DIYbio
+    html_url: http://diybio.org
+    xml_url: http://diybio.org/feed/
+  - title: Genspace
+    html_url: http://www.genspace.org/blog
+    xml_url: http://www.genspace.org/blog/feed/
+  - title: The BioBus Daily News
+    html_url: http://blogs.biobus.org
+    xml_url: http://blogs.biobus.org/feed/
+  - title: DIYbio Google Group
+    html_url: http://groups.google.com/group/diybio
+    xml_url: https://groups.google.com/group/diybio/feed/rss_v2_0_topics.xml?num=50
+  - title: DIYbio NYC
+    html_url: http://diybionyc.blogspot.com/feeds/posts/default
+    xml_url: http://diybionyc.blogspot.com/feeds/posts/default
+  - title: Citizen of Science
+    html_url: http://citsci.blogspot.com/feeds/posts/default
+    xml_url: http://citsci.blogspot.com/feeds/posts/default
+  - title: Oscillator
+    html_url: http://oscillatorblog.com/
+    xml_url: http://oscillator.tumblr.com/rss
+  - title: My Biotech Life
+    html_url: http://my.biotechlife.net
+    xml_url: http://feeds.feedburner.com/MyBiotechLife

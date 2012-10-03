@@ -18,9 +18,23 @@ A DIY planet + twitter aggregator.
 
 ## Configure
 
-TODO
+Copy `config.sample.yml` to config.yml and fill in the correct values. 
 
+## Crawl Twitter and Feeds
 
+To fill the database with tweets and feed items, run these scripts:
+
+    ./crawl-tweets.sh
+    ./crawl-feeds.sh
+
+## Start the webapp in development mode
+
+    rackup
+
+Visit `http://localhost:9292`.
+
+For production deployments, follow specific Rack app instructions
+for Passenger, Unicorn, etc.
 
 ## Credits
 
