@@ -23,6 +23,8 @@ twitter:
   consumer_secret: asldkjaskldj
   access_token: asdkjaksldj
   access_token_secret: aslkjdlaskjd
+  searches:
+  - query: diybio
   lists:
   - owner: diybio
     slug: garagistas
